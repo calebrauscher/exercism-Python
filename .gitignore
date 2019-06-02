@@ -1,0 +1,5 @@
+#Ignore folders
+.cache/v/cache/
+.exercism/
+.vscode/
+__pycache__
