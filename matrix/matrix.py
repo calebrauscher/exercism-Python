@@ -16,12 +16,7 @@ class Matrix:
     def create(self):
         ''' Converts string representation to a 2d list [[]] '''
         self.matrix_string = self.matrix_string.split('\n')
-        self.matrix = []
-        for item in self.matrix_string:
-            row = []
-            for num in item.split():
-                row.append(int(num))
-            self.matrix.append(row)
+        self.matrix = [[int(num) for num in item.split()] for item in self.matrix_string]
 
     def row(self, index):
         ''' Returns the row given an index. '''
