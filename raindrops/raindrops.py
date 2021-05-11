@@ -3,14 +3,10 @@
 
 def convert(number: int) -> str:
     """Return string representation of raindrop sound"""
-    raindrop_sound = ""
-    if number % 3 == 0:
-        raindrop_sound += "Pling"
-    if number % 5 == 0:
-        raindrop_sound += "Plang"
-    if number % 7 == 0:
-        raindrop_sound += "Plong"
+    number_to_sound = {3: "Pling", 5: "Plang", 7: "Plong"}
 
-    if raindrop_sound:
-        return raindrop_sound
-    return str(number)
+    sound = "".join(
+        [sound for num, sound in number_to_sound.items() if number % num == 0]
+    )
+
+    return sound or str(number)
