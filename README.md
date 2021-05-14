@@ -1,33 +1,20 @@
-# Phone Number
+# Difference Of Squares
 
-Clean up user-entered phone numbers so that they can be sent SMS messages.
+Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.
 
-The **North American Numbering Plan (NANP)** is a telephone numbering system used by many countries in North America like the United States, Canada or Bermuda. All NANP-countries share the same international country code: `1`.
+The square of the sum of the first ten natural numbers is
+(1 + 2 + ... + 10)² = 55² = 3025.
 
-NANP numbers are ten-digit numbers consisting of a three-digit Numbering Plan Area code, commonly known as *area code*, followed by a seven-digit local number. The first three digits of the local number represent the *exchange code*, followed by the unique four-digit number which is the *subscriber number*.
+The sum of the squares of the first ten natural numbers is
+1² + 2² + ... + 10² = 385.
 
-The format is usually represented as
+Hence the difference between the square of the sum of the first
+ten natural numbers and the sum of the squares of the first ten
+natural numbers is 3025 - 385 = 2640.
 
-```text
-(NXX)-NXX-XXXX
-```
-
-where `N` is any digit from 2 through 9 and `X` is any digit from 0 through 9.
-
-Your task is to clean up differently formatted telephone numbers by removing punctuation and the country code (1) if present.
-
-For example, the inputs
-- `+1 (613)-995-0253`
-- `613-995-0253`
-- `1 613 995 0253`
-- `613.995.0253`
-
-should all produce the output
-
-`6139950253`
-
-**Note:** As this exercise only deals with telephone numbers used in NANP-countries, only 1 is considered a valid country code.
-
+You are not expected to discover an efficient solution to this yourself from
+first principles; research is allowed, indeed, encouraged. Finding the best
+algorithm for the problem is a key skill in software engineering.
 
 ## Exception messages
 
@@ -45,10 +32,10 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run `pytest phone_number_test.py`
+To run the tests, run `pytest difference_of_squares_test.py`
 
 Alternatively, you can tell Python to run the pytest module:
-`python -m pytest phone_number_test.py`
+`python -m pytest difference_of_squares_test.py`
 
 ### Common `pytest` options
 
@@ -60,7 +47,7 @@ For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/phone-number` directory.
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/difference-of-squares` directory.
 
 You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
@@ -69,7 +56,7 @@ please see [Running the Tests](http://exercism.io/tracks/python/tests).
 
 ## Source
 
-Event Manager by JumpstartLab [http://tutorials.jumpstartlab.com/projects/eventmanager.html](http://tutorials.jumpstartlab.com/projects/eventmanager.html)
+Problem 6 at Project Euler [http://projecteuler.net/problem=6](http://projecteuler.net/problem=6)
 
 ## Submitting Incomplete Solutions
 
