@@ -1,21 +1,32 @@
-# Perfect Numbers
+# Saddle Points
 
-Determine if a number is perfect, abundant, or deficient based on
-Nicomachus' (60 - 120 CE) classification scheme for natural numbers.
+Detect saddle points in a matrix.
 
-The Greek mathematician [Nicomachus](https://en.wikipedia.org/wiki/Nicomachus) devised a classification scheme for natural numbers, identifying each as belonging uniquely to the categories of **perfect**, **abundant**, or **deficient** based on their [aliquot sum](https://en.wikipedia.org/wiki/Aliquot_sum). The aliquot sum is defined as the sum of the factors of a number not including the number itself. For example, the aliquot sum of 15 is (1 + 3 + 5) = 9
+So say you have a matrix like so:
 
-- **Perfect**: aliquot sum = number
-  - 6 is a perfect number because (1 + 2 + 3) = 6
-  - 28 is a perfect number because (1 + 2 + 4 + 7 + 14) = 28
-- **Abundant**: aliquot sum > number
-  - 12 is an abundant number because (1 + 2 + 3 + 4 + 6) = 16
-  - 24 is an abundant number because (1 + 2 + 3 + 4 + 6 + 8 + 12) = 36
-- **Deficient**: aliquot sum < number
-  - 8 is a deficient number because (1 + 2 + 4) = 7
-  - Prime numbers are deficient
+```text
+    1  2  3
+  |---------
+1 | 9  8  7
+2 | 5  3  2     <--- saddle point at column 1, row 2, with value 5
+3 | 6  6  7
+```
 
-Implement a way to determine whether a given number is **perfect**. Depending on your language track, you may also need to implement a way to determine whether a given number is **abundant** or **deficient**.
+It has a saddle point at column 1, row 2.
+
+It's called a "saddle point" because it is greater than or equal to
+every element in its row and less than or equal to every element in
+its column.
+
+A matrix may have zero or more saddle points.
+
+Your code should be able to provide the (possibly empty) list of all the
+saddle points for any given matrix.
+
+The matrix can have a different number of rows and columns (Non square).
+
+Note that you may find other definitions of matrix saddle points online,
+but the tests for this exercise follow the above unambiguous definition.
 
 
 ## Exception messages
@@ -34,10 +45,10 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run `pytest perfect_numbers_test.py`
+To run the tests, run `pytest saddle_points_test.py`
 
 Alternatively, you can tell Python to run the pytest module:
-`python -m pytest perfect_numbers_test.py`
+`python -m pytest saddle_points_test.py`
 
 ### Common `pytest` options
 
@@ -49,7 +60,7 @@ For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/perfect-numbers` directory.
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/saddle-points` directory.
 
 You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
@@ -58,7 +69,7 @@ please see [Running the Tests](http://exercism.io/tracks/python/tests).
 
 ## Source
 
-Taken from Chapter 2 of Functional Thinking by Neal Ford. [http://shop.oreilly.com/product/0636920029687.do](http://shop.oreilly.com/product/0636920029687.do)
+J Dalbey's Programming Practice problems [http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html](http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html)
 
 ## Submitting Incomplete Solutions
 
